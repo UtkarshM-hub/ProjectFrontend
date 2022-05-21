@@ -1,0 +1,40 @@
+:root {
+  --mainColor: #9068fe;
+  --mainRed: #fd5454;
+  --mainColorHover: #a180fb;
+  --mainTextColor: #9068fe;
+  --SecondaryText: #636373;
+  --BgCard: #1c1c1c;
+  /* --BgCard: #1d1e26; */
+  --CardHover: #272735;
+  --MainBG: #171c24;
+  --StrokeColor: #4a494b;
+  --SuccessColor: #06a08e;
+  --SuccessColorHover: #17e2ca;
+  --WarningColor: #df7211;
+  --CancelColor: #fe572f;
+  --SecondMain: #1d1e26;
+  --MessageBox: #9067ff;
+  --AddCardBG: #2f313f;
+  --ItemCardBG: rgba(69, 80, 99, 0.4);
+  --EditNDelete: #2d2f3a;
+  --DesignMainColor: #b79cff;
+  --MainYellow: #ffe195;
+  --SecondaryGreen: #59e16f;
+  --DeliveredGreen: #289339;
+  --SecondaryGreenHover: #93c69b;
+  --SideBarSettings: #0b0f16;
+  --MainBlue: #9adae2;
+  --SalesItemColor: rgb(146 146 163 / 50%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}

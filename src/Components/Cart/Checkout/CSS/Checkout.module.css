@@ -1,0 +1,81 @@
+.Checkout {
+  background-color: var(--AddCardBG);
+  width: 25%;
+  border-radius: 10px;
+  padding: 0.5em;
+  min-height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.Checkout_CheckoutBtn {
+  width: 100%;
+  outline: none;
+  border: 2px solid var(--SuccessColor);
+  background-color: var(--SuccessColor);
+  color: white;
+  font-weight: 550;
+  font-size: 1.01em;
+  padding: 0.3em;
+  cursor: pointer;
+  margin: 1em 0;
+}
+
+.Checkout_Amount {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Checkout_TotalAmount {
+  color: var(--SuccessColor) !important;
+}
+
+.Checkout_Amount p {
+  color: var(--SecondaryText);
+}
+
+.Checkout_CheckoutBtn:hover {
+  background-color: var(--SuccessColorHover);
+  border: 2px solid var(--SuccessColorHover);
+}
+
+.Checkout_Price {
+  font-weight: 550;
+  font-size: 1.2rem;
+  color: var(--SuccessColor) !important;
+}
+
+.Checkout_Address {
+  margin: 0 0 0.5em 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.Checkout_Address a {
+  color: var(--MainYellow);
+  font-size: 0.8em;
+  text-align: end;
+  width: 100%;
+}
+
+.Checkout_Address p {
+  color: var(--SecondaryText);
+  margin: 0.5em 0;
+}
+
+.Checkout_Header {
+  color: var(--mainTextColor) !important;
+  margin: 0.5em 0 0 0 !important;
+}
+
+.Checkout h3 {
+  color: white;
+  margin: 0.5em 0;
+}
