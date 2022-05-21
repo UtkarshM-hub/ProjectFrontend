@@ -37,7 +37,7 @@ const Home = () => {
   let socket;
   const initialize = async () => {
     if (refresh) {
-      socket = init("http://localhost");
+      socket = init("https://chatdotbackend.herokuapp.com");
       refresh = false;
     }
     socket.emit("saveConnect", { userId: userId });
