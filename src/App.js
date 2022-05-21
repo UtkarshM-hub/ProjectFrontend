@@ -46,9 +46,6 @@ function App() {
         <Login show={setShowHandler}/>
       </Route>
       <Layout>
-        <Route path="/" exact>
-          <Home/>
-        </Route>
         <Route path="/inventory" exact>
           <Inventory/>
         </Route>
@@ -88,6 +85,9 @@ function App() {
         </Route>
         <Route path="/Analytics">
           <Analytics/>
+        </Route>
+        <Route path="/" exact>
+          <Home/>
         </Route>
       </Layout>
     </Switch>
