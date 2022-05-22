@@ -10,7 +10,7 @@ const SignUp = ({ show }) => {
   // Handlers
   const SignInHandler = (data) => {
     axios
-      .post("https://chatbackenddot.herokuapp.com/users/signup", data, {
+      .post("https://somethingdotfunny.herokuapp.com/users/signup", data, {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then(async (res) => {
