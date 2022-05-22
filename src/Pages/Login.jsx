@@ -12,7 +12,7 @@ const Login = ({ show }) => {
   const LoginHandler = async (data) => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/users/login",
+        "https://somethingdotfunny.herokuapp.com/users/login",
         JSON.stringify(data),
         {
           headers: { "Content-Type": "application/json" },

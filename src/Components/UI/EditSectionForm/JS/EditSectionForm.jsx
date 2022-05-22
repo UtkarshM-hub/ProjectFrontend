@@ -33,7 +33,7 @@ const EditSectionForm = ({ sectionId, id, onClick }) => {
     console.log(items);
 
     await axios
-      .post("https://chatdotbackend.herokuapp.com/Inventory/EditSectionData", data, {
+      .post("https://somethingdotfunny.herokuapp.com/Inventory/EditSectionData", data, {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
@@ -47,7 +47,7 @@ const EditSectionForm = ({ sectionId, id, onClick }) => {
     const getSectionData = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/Inventory/GetSectionData",
+          "https://somethingdotfunny.herokuapp.com/Inventory/GetSectionData",
           JSON.stringify({ userId: userId, sectionId: sectionId }),
           { headers: { "Content-Type": "application/json" } }
         )

@@ -24,7 +24,7 @@ const Checkout = ({ TotalAmount, Items, display }) => {
   const GetSettings = async () => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/users/getSettingsHandler",
+        "https://somethingdotfunny.herokuapp.com/users/getSettingsHandler",
         JSON.stringify({ userId: userId }),
         {
           headers: { "Content-Type": "application/json" },

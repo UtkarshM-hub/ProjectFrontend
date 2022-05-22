@@ -22,7 +22,7 @@ const Inventory = () => {
   console.log(Inventory);
   const AddInventoryHandler = async (data) => {
     await axios
-      .post("https://chatdotbackend.herokuapp.com/Inventory/AddSection", data, {
+      .post("https://somethingdotfunny.herokuapp.com/Inventory/AddSection", data, {
         headers: { "Content-Type": "multipart/form-data" },
       })
       .then((res) => {
@@ -41,7 +41,7 @@ const Inventory = () => {
     const getInventoryHandler = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/Inventory/getInventory",
+          "https://somethingdotfunny.herokuapp.com/Inventory/getInventory",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },

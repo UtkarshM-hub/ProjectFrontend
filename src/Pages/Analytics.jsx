@@ -12,7 +12,7 @@ const Analytics = () => {
     const getAnalyticsDataHandler = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/Analytics/GetAnalytics",
+          "https://somethingdotfunny.herokuapp.com/Analytics/GetAnalytics",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },

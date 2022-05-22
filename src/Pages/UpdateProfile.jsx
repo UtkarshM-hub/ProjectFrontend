@@ -32,7 +32,7 @@ const UpdateProfile = () => {
     ) {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/users/EditUserData",
+          "https://somethingdotfunny.herokuapp.com/users/EditUserData",
           JSON.stringify({ userId: userId, data }),
           {
             headers: { "Content-Type": "application/json" },
@@ -57,7 +57,7 @@ const UpdateProfile = () => {
   const RemoveProfilePicHandler = async () => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/users/RemoveProfilePic",
+        "https://somethingdotfunny.herokuapp.com/users/RemoveProfilePic",
         JSON.stringify({ userId: userId }),
         {
           headers: { "Content-Type": "application/json" },
@@ -80,7 +80,7 @@ const UpdateProfile = () => {
       setTimeout(async () => {
         await axios
           .post(
-            "https://chatdotbackend.herokuapp.com/users/UpdateProfilePic",
+            "https://somethingdotfunny.herokuapp.com/users/UpdateProfilePic",
             FileData,
             {
               headers: { "Content-Type": "multipart/form-data" },

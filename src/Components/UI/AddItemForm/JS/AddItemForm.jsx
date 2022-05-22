@@ -39,7 +39,7 @@ const AddItemForm = ({ toggel }) => {
       data.append("SectionId", sectionId.substring(1));
       data.append("Image", Image);
       await axios
-        .post("https://chatdotbackend.herokuapp.com/Inventory/AddItemToSection", data, {
+        .post("https://somethingdotfunny.herokuapp.com/Inventory/AddItemToSection", data, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {

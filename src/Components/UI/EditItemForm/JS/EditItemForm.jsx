@@ -43,7 +43,7 @@ const EditItemForm = ({ toggel, ItemData }) => {
       console.log(data);
 
       await axios
-        .post("https://chatdotbackend.herokuapp.com/Inventory/EditItemFromSection", data, {
+        .post("https://somethingdotfunny.herokuapp.com/Inventory/EditItemFromSection", data, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((res) => {

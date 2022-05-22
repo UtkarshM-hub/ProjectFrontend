@@ -14,7 +14,7 @@ const Sales = () => {
     const GetSalesData = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/users/GetSalesData",
+          "https://somethingdotfunny.herokuapp.com/users/GetSalesData",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },

@@ -24,7 +24,7 @@ const AddressContainer = ({
           let time = setTimeout(async () => {
             await axios
               .post(
-                "https://chatdotbackend.herokuapp.com/users/SetSelectedAddress",
+                "https://somethingdotfunny.herokuapp.com/users/SetSelectedAddress",
                 JSON.stringify({ userId: userId, _id: _id }),
                 {
                   headers: { "Content-Type": "application/json" },

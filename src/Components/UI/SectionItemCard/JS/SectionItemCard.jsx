@@ -27,7 +27,7 @@ const SectionItemCard = ({
     console.log({ _id: _id, SectionId: sectionId, userId: userId });
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Inventory/DeleteItem",
+        "https://somethingdotfunny.herokuapp.com/Inventory/DeleteItem",
         JSON.stringify({ _id: _id, SectionId: sectionId, userId: userId }),
         {
           headers: { "Content-Type": "application/json" },

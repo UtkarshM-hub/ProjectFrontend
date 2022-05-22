@@ -37,7 +37,7 @@ const Home = () => {
   let socket;
   const initialize = async () => {
     if (refresh) {
-      socket = init("https://chatdotbackend.herokuapp.com");
+      socket = init("https://somethingdotfunny.herokuapp.com");
       refresh = false;
     }
     socket.emit("saveConnect", { userId: userId });
@@ -97,7 +97,7 @@ const Home = () => {
   const getMessages = async () => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Connection/GetMsg",
+        "https://somethingdotfunny.herokuapp.com/Connection/GetMsg",
         JSON.stringify({ userId: userId }),
         { headers: { "Content-Type": "application/json" } }
       )
@@ -110,7 +110,7 @@ const Home = () => {
   const getContactsHandler = async () => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Connection/getContacts",
+        "https://somethingdotfunny.herokuapp.com/Connection/getContacts",
         { userId: userId },
         {
           Headers: { "Content-Type": "application/json" },
@@ -183,7 +183,7 @@ const Home = () => {
     }
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Connection/SaveMessage",
+        "https://somethingdotfunny.herokuapp.com/Connection/SaveMessage",
         JSON.stringify({
           id: ActiveContactState.id,
           from: userId,
@@ -213,7 +213,7 @@ const Home = () => {
   //     };
   //     await axios
   //       .post(
-  //         "https://chatdotbackend.herokuapp.com/Connection/ForwardMessage",
+  //         "https://somethingdotfunny.herokuapp.com/Connection/ForwardMessage",
   //         JSON.stringify(data),
   //         {
   //           headers: { "Content-Type": "application/json" },
@@ -238,7 +238,7 @@ const Home = () => {
     const getCartHandler = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/Shop/GetCart",
+          "https://somethingdotfunny.herokuapp.com/Shop/GetCart",
           JSON.stringify({ userId: userId }),
           {
             headers: {

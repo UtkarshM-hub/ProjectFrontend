@@ -39,7 +39,7 @@ const Cart = ({ show, data }) => {
     const getCartHandler = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/Shop/GetCart",
+          "https://somethingdotfunny.herokuapp.com/Shop/GetCart",
           JSON.stringify({ userId: userId }),
           {
             headers: {
@@ -58,7 +58,7 @@ const Cart = ({ show, data }) => {
     console.log(id, qty);
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/SetQuantity",
+        "https://somethingdotfunny.herokuapp.com/Shop/SetQuantity",
         JSON.stringify({ userId: userId, ProductId: id, Quantity: qty }),
         {
           headers: { "Content-Type": "application/json" },
@@ -71,7 +71,7 @@ const Cart = ({ show, data }) => {
   const ReduceQtyHandler = async (id, qty) => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/SetQuantity",
+        "https://somethingdotfunny.herokuapp.com/Shop/SetQuantity",
         JSON.stringify({ userId: userId, ProductId: id, Quantity: qty }),
         {
           headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ const Cart = ({ show, data }) => {
   const RemoveFromCartHandler = async (id) => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/RemoveFromCart",
+        "https://somethingdotfunny.herokuapp.com/Shop/RemoveFromCart",
         JSON.stringify({ userId: userId, ProductId: id }),
         {
           headers: { "Content-Type": "application/json" },
@@ -106,7 +106,7 @@ const Cart = ({ show, data }) => {
     }
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Payment/CreateOrder",
+        "https://somethingdotfunny.herokuapp.com/Payment/CreateOrder",
         JSON.stringify({ userId: userId, Amount: TotalAmount }),
         {
           headers: { "Content-Type": "application/json" },
@@ -134,7 +134,7 @@ const Cart = ({ show, data }) => {
             if (CurrentAddress !== undefined) {
               await axios
                 .post(
-                  "https://chatdotbackend.herokuapp.com/Payment/Checkout",
+                  "https://somethingdotfunny.herokuapp.com/Payment/Checkout",
                   JSON.stringify({
                     userId: userId,
                     TotalAmount: TotalAmount,

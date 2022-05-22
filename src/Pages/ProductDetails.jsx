@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const getProductDataHandler = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/Shop/GetProductData",
+          "https://somethingdotfunny.herokuapp.com/Shop/GetProductData",
           JSON.stringify({ ProductId: ProductId.substring(1), _id: userId }),
           {
             headers: { "Content-Type": "application/json" },
@@ -36,7 +36,7 @@ const ProductDetails = () => {
   const AddToCartHandler = async (data) => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/AddToCart",
+        "https://somethingdotfunny.herokuapp.com/Shop/AddToCart",
         JSON.stringify({ _id: userId, data: data }),
         {
           headers: { "Content-Type": "application/json" },
@@ -52,7 +52,7 @@ const ProductDetails = () => {
   const BuyNowHandler = async (data) => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/AddToCart",
+        "https://somethingdotfunny.herokuapp.com/Shop/AddToCart",
         JSON.stringify({ _id: userId, data: data }),
         {
           headers: { "Content-Type": "application/json" },

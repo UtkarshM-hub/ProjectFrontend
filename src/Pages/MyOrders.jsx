@@ -14,7 +14,7 @@ const MyOrders = () => {
     const GetOrdersHandler = async () => {
       await axios
         .post(
-          "https://chatdotbackend.herokuapp.com/users/GetMyOrders",
+          "https://somethingdotfunny.herokuapp.com/users/GetMyOrders",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },

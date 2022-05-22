@@ -52,7 +52,7 @@ const NavBar = () => {
   const AddFriendRequestHandler = async (data) => {
     dispatch(ChatActions.AddRequested({ id: data.friendId }));
     await axios
-      .post("https://chatdotbackend.herokuapp.com/Connection/friendRequest", JSON.stringify(data), {
+      .post("https://somethingdotfunny.herokuapp.com/Connection/friendRequest", JSON.stringify(data), {
         headers: { "Content-Type": "application/json" },
       })
       .then((res) => console.log(res))
@@ -69,7 +69,7 @@ const NavBar = () => {
     dispatch(ChatActions.DenyRequest(data));
 
     await axios
-      .post("https://chatdotbackend.herokuapp.com/Connection/DenyRequest", JSON.stringify(data), {
+      .post("https://somethingdotfunny.herokuapp.com/Connection/DenyRequest", JSON.stringify(data), {
         headers: { "Content-Type": "application/json" },
       })
       .then((res) => console.log(res))
@@ -79,7 +79,7 @@ const NavBar = () => {
   const getNotificationHandler = async () => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Connection/getNotifications",
+        "https://somethingdotfunny.herokuapp.com/Connection/getNotifications",
         { userId: userId },
         {
           headers: { "Content-Type": "application/json" },
@@ -110,7 +110,7 @@ const NavBar = () => {
   const RemoveFriendRequestHandler = async (data) => {
     dispatch(ChatActions.RemoveRequested({ id: data.friendId }));
     await axios
-      .post("https://chatdotbackend.herokuapp.com/Connection/DeleteRequest", JSON.stringify(data), {
+      .post("https://somethingdotfunny.herokuapp.com/Connection/DeleteRequest", JSON.stringify(data), {
         headers: { "Content-Type": "application/json" },
       })
       .then((res) => console.log(res))
@@ -120,7 +120,7 @@ const NavBar = () => {
   const FetchUserData = async () => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/users/GetUserData",
+        "https://somethingdotfunny.herokuapp.com/users/GetUserData",
         JSON.stringify({ userId: userId }),
         {
           headers: { "Content-Type": "application/json" },
@@ -158,7 +158,7 @@ const NavBar = () => {
     dispatch(ChatActions.DenyRequest(data));
 
     await axios
-      .post("https://chatdotbackend.herokuapp.com/Connection/AcceptRequest", JSON.stringify(data), {
+      .post("https://somethingdotfunny.herokuapp.com/Connection/AcceptRequest", JSON.stringify(data), {
         headers: { "Content-Type": "application/json" },
       })
       .then((res) => dispatch(ChatActions.AddFriend(res.data)))

@@ -25,7 +25,7 @@ const SectionCard = ({
     await dispatch(ChatActions.RemoveSection({ id: id }));
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Inventory/DeleteSection",
+        "https://somethingdotfunny.herokuapp.com/Inventory/DeleteSection",
         JSON.stringify({ id: id, userId: userId }),
         {
           headers: { "Content-Type": "application/json" },

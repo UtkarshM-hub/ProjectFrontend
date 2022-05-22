@@ -16,7 +16,7 @@ const Store = () => {
     console.log(itemName);
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/GetProducts",
+        "https://somethingdotfunny.herokuapp.com/Shop/GetProducts",
         JSON.stringify({ ItemName: itemName }),
         {
           headers: {
@@ -32,7 +32,7 @@ const Store = () => {
   const AddToCartHandler = async (data) => {
     await axios
       .post(
-        "https://chatdotbackend.herokuapp.com/Shop/AddToCart",
+        "https://somethingdotfunny.herokuapp.com/Shop/AddToCart",
         JSON.stringify({ _id: userId, data: data }),
         {
           headers: { "Content-Type": "application/json" },
