@@ -48,7 +48,7 @@ const SignUpForm = ({ SignIn, show }) => {
       ) {
         setShow(true);
         await axios
-          .post("https://chatbackenddot.herokuapp.com/users/CheckCred", {
+          .post("https://somethingdotfunny.herokuapp.com/users/CheckCred", {
             Email: EmailVal,
             UserName: UserNameVal,
           })
