@@ -94,16 +94,35 @@ const SignUpForm = ({ SignIn, show }) => {
       ConfPasswordIsValid
     ) {
       console.log(UserNameIsValid, PasswordIsValid);
-      const data = new FormData();
-      data.append("UserName", UserNameVal);
-      data.append("Email", EmailVal);
-      data.append("Password", PasswordVal);
-      data.append("Name", NameVal);
-      data.append("Description", DescriptionVal);
-      data.append("Type", UserType);
-      data.append("picture", ProfilePicVal);
-      console.log("Signing in");
-      return SignIn(data);
+      const imageFormData = new FormData();
+      imageFormData.append("file", ProfilePicVal);
+      imageFormData.append("upload_preset", "gmcn2mfb");
+      await axios
+        .post(
+          "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
+          imageFormData
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            const data = {
+              UserName: UserNameVal,
+              Email: EmailVal,
+              Password: PasswordVal,
+              Name: NameVal,
+              Description: DescriptionVal,
+              Type: UserType,
+              picture: res.data.url,
+            };
+            return SignIn(data);
+          }
+          if (res.status !== 200) {
+            return show({
+              type: "Error",
+              message: "Error uploading image",
+              next: setNext,
+            });
+          }
+        });
     } else {
       return setShowSecond(true);
     }
