@@ -94,35 +94,46 @@ const SignUpForm = ({ SignIn, show }) => {
       ConfPasswordIsValid
     ) {
       console.log(UserNameIsValid, PasswordIsValid);
-      const imageFormData = new FormData();
-      imageFormData.append("file", ProfilePicVal);
-      imageFormData.append("upload_preset", "gmcn2mfb");
-      await axios
-        .post(
-          "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
-          imageFormData
-        )
-        .then((res) => {
-          if (res.status === 200) {
-            const data = {
-              UserName: UserNameVal,
-              Email: EmailVal,
-              Password: PasswordVal,
-              Name: NameVal,
-              Description: DescriptionVal,
-              Type: UserType,
-              picture: res.data.url,
-            };
-            return SignIn(data);
-          }
-          if (res.status !== 200) {
-            return show({
-              type: "Error",
-              message: "Error uploading image",
-              next: setNext,
-            });
-          }
-        });
+      let data = {
+        UserName: UserNameVal,
+        Email: EmailVal,
+        Password: PasswordVal,
+        Name: NameVal,
+        Description: DescriptionVal,
+        Type: UserType,
+        picture: ProfilePicVal,
+      };
+      if (ProfilePicVal !== undefined) {
+        const imageFormData = new FormData();
+        imageFormData.append("file", ProfilePicVal);
+        imageFormData.append("upload_preset", "gmcn2mfb");
+        await axios
+          .post(
+            "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
+            imageFormData
+          )
+          .then((res) => {
+            if (res.status === 200) {
+              data = {
+                UserName: UserNameVal,
+                Email: EmailVal,
+                Password: PasswordVal,
+                Name: NameVal,
+                Description: DescriptionVal,
+                Type: UserType,
+                picture: res.data.url,
+              };
+            }
+            if (res.status !== 200) {
+              return show({
+                type: "Error",
+                message: "Error uploading image",
+                next: setNext,
+              });
+            }
+          });
+      }
+      return SignIn(data);
     } else {
       return setShowSecond(true);
     }
