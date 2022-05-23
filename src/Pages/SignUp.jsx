@@ -29,7 +29,7 @@ const SignUp = ({ show }) => {
         headers: { "Content-Type": "application/json" },
       })
       .then(async (res) => {
-        if (res.data.type === "Success") {
+        if (res.data.type === "Success" || res.status === 200) {
           await show({ message: res.data.message, type: res.data.type });
           history.push("/login");
         }
