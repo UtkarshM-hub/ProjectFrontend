@@ -15,26 +15,25 @@ const AddSectionForm = ({ addInventory }) => {
     fd.append("upload_preset", "gmcn2mfb");
     console.log(Name !== undefined && Type !== undefined);
     if (Name !== undefined && Type !== undefined) {
-      console.log(Image, Image === undefined);
-      // if (Image === undefined) {
-      //   addInventory({
-      //     Name: Name,
-      //     userId: userId,
-      //     Type: Type,
-      //     Image: undefined,
-      //   });
-      // } else {
-      //   await axios
-      //     .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", fd)
-      //     .then(async (res) => {
-      //       addInventory({
-      //         Name: Name,
-      //         userId: userId,
-      //         Type: Type,
-      //         Image: res.data.url,
-      //       });
-      //     });
-      // }
+      if (Image === undefined) {
+        addInventory({
+          Name: Name,
+          userId: userId,
+          Type: Type,
+          Image: undefined,
+        });
+      } else {
+        await axios
+          .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", fd)
+          .then(async (res) => {
+            addInventory({
+              Name: Name,
+              userId: userId,
+              Type: Type,
+              Image: res.data.url,
+            });
+          });
+      }
     }
     return;
   };
