@@ -32,30 +32,53 @@ const EditItemForm = ({ toggel, ItemData }) => {
       Price > 0
     ) {
       const data = new FormData();
-      data.append("Name", Name);
-      data.append("Quantity", Quantity);
-      data.append("Description", Description);
-      data.append("Price", Price);
-      data.append("UserId", UserId);
-      data.append("SectionId", sectionId.substring(1));
-      data.append("_id", _id);
-      data.append("Image", Image);
+      data.append("file", Image);
+      data.append("upload_preset", "gmcn2mfb");
+      // data.append("Name", Name);
+      // data.append("Quantity", Quantity);
+      // data.append("Description", Description);
+      // data.append("Price", Price);
+      // data.append("UserId", UserId);
+      // data.append("SectionId", sectionId.substring(1));
+      // data.append("_id", _id);
+      // data.append("Image", Image);
       console.log(data);
 
       await axios
-        .post("https://somethingdotfunny.herokuapp.com/Inventory/EditItemFromSection", data, {
-          headers: { "Content-Type": "multipart/form-data" },
-        })
-        .then((res) => {
+        .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", data)
+        .then(async (res) => {
           if (res.status === 200) {
-            toggel((prev) => !prev);
-            dispatch(
-              ChatActions.UpdateItemFromSection({
-                data: res.data,
-                SectionId: sectionId.substring(1),
-                _id: _id,
-              })
-            );
+            let newData = {
+              Name: Name,
+              Quantity: Quantity,
+              Description: Description,
+              Price: Price,
+              UserId: UserId,
+              SectionId: sectionId.substring(1),
+              _id: _id,
+              Image: res.data.url,
+            };
+
+            await axios
+              .post(
+                "https://somethingdotfunny.herokuapp.com/Inventory/EditItemFromSection",
+                JSON.stringify(newData),
+                {
+                  headers: { "Content-Type": "application/json" },
+                }
+              )
+              .then((res) => {
+                if (res.status === 200) {
+                  toggel((prev) => !prev);
+                  dispatch(
+                    ChatActions.UpdateItemFromSection({
+                      data: res.data,
+                      SectionId: sectionId.substring(1),
+                      _id: _id,
+                    })
+                  );
+                }
+              });
           }
         });
     }
