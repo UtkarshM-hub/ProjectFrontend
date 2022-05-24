@@ -22,9 +22,13 @@ const Inventory = () => {
   console.log(Inventory);
   const AddInventoryHandler = async (data) => {
     await axios
-      .post("https://somethingdotfunny.herokuapp.com/Inventory/AddSection", data, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
+      .post(
+        "https://somethingdotfunny.herokuapp.com/Inventory/AddSection",
+        JSON.stringify(data),
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      )
       .then((res) => {
         if (res.status === 500) {
           console.log("Error occured");

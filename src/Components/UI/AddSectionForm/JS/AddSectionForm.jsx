@@ -11,14 +11,31 @@ const AddSectionForm = ({ addInventory }) => {
   const SendDataHandler = (e) => {
     e.preventDefault();
     const fd = new FormData();
+    fd.append("file", Image);
+    fd.append("upload_preset", "gmcn2mfb");
     console.log(Name !== undefined && Type !== undefined);
     if (Name !== undefined && Type !== undefined) {
-      fd.append("Name", Name);
-      fd.append("Type", Type);
-      fd.append("userId", userId);
-      fd.append("Image", Image);
+      console.log(Image, Image === undefined);
+      // if (Image === undefined) {
+      //   addInventory({
+      //     Name: Name,
+      //     userId: userId,
+      //     Type: Type,
+      //     Image: undefined,
+      //   });
+      // } else {
+      //   await axios
+      //     .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", fd)
+      //     .then(async (res) => {
+      //       addInventory({
+      //         Name: Name,
+      //         userId: userId,
+      //         Type: Type,
+      //         Image: res.data.url,
+      //       });
+      //     });
+      // }
     }
-    addInventory(fd);
     return;
   };
   return (
