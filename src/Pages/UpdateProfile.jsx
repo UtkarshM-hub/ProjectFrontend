@@ -75,20 +75,29 @@ const UpdateProfile = () => {
     imageEle.onchange = async (e) => {
       setSetFile(e.target.files[0]);
       let FileData = new FormData();
-      FileData.append("userId", userId);
-      FileData.append("picture", e.target.files[0]);
+      FileData.append("file", e.target.files[0]);
+      FileData.append("upload_preset", "gmcn2mfb");
       setTimeout(async () => {
         await axios
           .post(
-            "https://somethingdotfunny.herokuapp.com/users/UpdateProfilePic",
-            FileData,
-            {
-              headers: { "Content-Type": "multipart/form-data" },
-            }
+            "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
+            FileData
           )
-          .then((res) =>
-            dispatch(ChatActions.setImage({ url: res.data.ProfilePic }))
-          );
+          .then((res) => {
+            if (res.status === 200) {
+              await axios
+                .post(
+                  "https://somethingdotfunny.herokuapp.com/users/UpdateProfilePic",
+                  JSON.stringify({ Picture: res.data.url, userId: userId }),
+                  {
+                    headers: { "Content-Type": "application/json" },
+                  }
+                )
+                .then((res) =>
+                  dispatch(ChatActions.setImage({ url: res.data.ProfilePic }))
+                );
+            }
+          });
       }, 2000);
     };
   };
