@@ -17,14 +17,14 @@ const AddSectionForm = ({ addInventory }) => {
     console.log(Name !== undefined && Type !== undefined);
     if (Name !== undefined && Type !== undefined) {
       if (Image === undefined) {
-        addInventory({
+        return addInventory({
           Name: Name,
           userId: userId,
           Type: Type,
           Image: undefined,
         });
       } else {
-        await axios
+        return await axios
           .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", fd)
           .then(async (res) => {
             addInventory({
