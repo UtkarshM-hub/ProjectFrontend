@@ -42,7 +42,7 @@ const EditSectionForm = ({ sectionId, id, onClick }) => {
             sectionId: sectionId,
             userId: userId,
             Type: Type,
-            Items: Items,
+            Items: JSON.stringify(items),
             Image: res.data.url,
           };
           await axios
