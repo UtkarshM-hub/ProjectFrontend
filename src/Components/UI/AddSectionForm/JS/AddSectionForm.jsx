@@ -8,7 +8,7 @@ const AddSectionForm = ({ addInventory }) => {
   const [Image, setImage] = useState();
   const userId = localStorage.getItem("userId");
 
-  const SendDataHandler = (e) => {
+  const SendDataHandler = async (e) => {
     e.preventDefault();
     const fd = new FormData();
     fd.append("file", Image);
