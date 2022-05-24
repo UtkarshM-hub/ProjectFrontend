@@ -24,23 +24,42 @@ const EditSectionForm = ({ sectionId, id, onClick }) => {
   const EditDataHandler = async (e) => {
     e.preventDefault();
     const data = new FormData();
-    data.append("Name", Name);
-    data.append("sectionId", sectionId);
-    data.append("userId", userId);
-    data.append("Type", Type);
-    data.append("Items", JSON.stringify(items));
-    data.append("Image", Image);
+    data.append("file", Image);
+    data.append("upload_preset", "gmcn2mfb");
+    // data.append("Name", Name);
+    // data.append("sectionId", sectionId);
+    // data.append("userId", userId);
+    // data.append("Type", Type);
+    // data.append("Items", JSON.stringify(items));
+    // data.append("Image", Image);
     console.log(items);
-
     await axios
-      .post("https://somethingdotfunny.herokuapp.com/Inventory/EditSectionData", data, {
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-      .then((res) => {
+      .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", data)
+      .then(async (res) => {
         if (res.status === 200) {
-          dispatch(ChatActions.UpdateSection(res.data));
+          let newData = {
+            Name: Name,
+            sectionId: sectionId,
+            userId: userId,
+            Type: Type,
+            Items: Items,
+            Image: res.data.url,
+          };
+          await axios
+            .post(
+              "https://somethingdotfunny.herokuapp.com/Inventory/EditSectionData",
+              JSON.stringify(newData),
+              {
+                headers: { "Content-Type": "application/json" },
+              }
+            )
+            .then((res) => {
+              if (res.status === 200) {
+                dispatch(ChatActions.UpdateSection(res.data));
+              }
+              onClick((prev) => !prev);
+            });
         }
-        onClick((prev) => !prev);
       });
   };
   useEffect(() => {
