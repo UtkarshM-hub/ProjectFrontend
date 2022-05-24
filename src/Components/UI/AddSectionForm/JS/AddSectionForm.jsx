@@ -1,6 +1,7 @@
 import Button from "../../Button/JS/Button";
 import React, { useState } from "react";
 import classes from "../CSS/AddSectionForm.module.css";
+import axios from "axios";
 
 const AddSectionForm = ({ addInventory }) => {
   const [Name, setName] = useState(undefined);
