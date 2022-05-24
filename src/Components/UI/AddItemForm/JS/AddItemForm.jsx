@@ -34,10 +34,7 @@ const AddItemForm = ({ toggel }) => {
       data.append("file", Image);
       data.append("upload_preset", "gmcn2mfb");
       await axios
-        .post(
-          "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
-          FileData
-        )
+        .post("https://api.cloudinary.com/v1_1/dcglxmssd/image/upload", data)
         .then(async (res) => {
           let newData = {
             Name: Name,
@@ -45,7 +42,7 @@ const AddItemForm = ({ toggel }) => {
             Description: Description,
             Price: Price,
             UserId: UserId,
-            SectionId: SectionId,
+            SectionId: sectionId.substring(1),
             Image: res.data.url,
           };
           await axios
