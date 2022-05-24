@@ -31,28 +31,50 @@ const AddItemForm = ({ toggel }) => {
       Price > 0
     ) {
       const data = new FormData();
-      data.append("Name", Name);
-      data.append("Quantity", Quantity);
-      data.append("Description", Description);
-      data.append("Price", Price);
-      data.append("UserId", UserId);
-      data.append("SectionId", sectionId.substring(1));
-      data.append("Image", Image);
+      data.append("file", Image);
+      data.append("upload_preset", "gmcn2mfb");
       await axios
-        .post("https://somethingdotfunny.herokuapp.com/Inventory/AddItemToSection", data, {
-          headers: { "Content-Type": "multipart/form-data" },
-        })
-        .then((res) => {
-          if (res.status === 200) {
-            dispatch(
-              ChatActions.AddItemToSection({
-                data: res.data,
-                sectionId: sectionId.substring(1),
-              })
-            );
-            toggel((prev) => !prev);
-          }
+        .post(
+          "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
+          FileData
+        )
+        .then(async (res) => {
+          let newData = {
+            Name: Name,
+            Quantity: Quantity,
+            Description: Description,
+            Price: Price,
+            UserId: UserId,
+            SectionId: SectionId,
+            Image: res.data.url,
+          };
+          await axios
+            .post(
+              "https://somethingdotfunny.herokuapp.com/Inventory/AddItemToSection",
+              JSON.stringify(newData),
+              {
+                headers: { "Content-Type": "application/json" },
+              }
+            )
+            .then((res) => {
+              if (res.status === 200) {
+                dispatch(
+                  ChatActions.AddItemToSection({
+                    data: res.data,
+                    sectionId: sectionId.substring(1),
+                  })
+                );
+                toggel((prev) => !prev);
+              }
+            });
         });
+      // data.append("Name", Name);
+      // data.append("Quantity", Quantity);
+      // data.append("Description", Description);
+      // data.append("Price", Price);
+      // data.append("UserId", UserId);
+      // data.append("SectionId", sectionId.substring(1));
+      // data.append("Image", Image);
     }
   };
   return (
