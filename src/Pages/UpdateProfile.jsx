@@ -83,7 +83,7 @@ const UpdateProfile = () => {
             "https://api.cloudinary.com/v1_1/dcglxmssd/image/upload",
             FileData
           )
-          .then((res) => {
+          .then(async (res) => {
             if (res.status === 200) {
               await axios
                 .post(
