@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital@1&display=swap");
 :root {
   --mainColor: #9068fe;
   --mainRed: #fd5454;
@@ -31,7 +32,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans";
+  font-family: "Lobster", cursive;
+  font-family: "Open Sans", sans-serif;
 }
 
 #root {

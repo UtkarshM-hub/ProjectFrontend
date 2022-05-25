@@ -11,6 +11,7 @@ const CartItemComponent = ({
   IncreaseItemQty,
   ReduceQtyHandler,
   RemoveFromCartHandler,
+  left,
 }) => {
   const [CurrentQuantity, setCurrentQuantity] = useState(+Quantity);
   console.log(typeof +Price);
@@ -56,8 +57,12 @@ const CartItemComponent = ({
             setCurrentQuantity((prev) => {
               console.log(prev);
               console.log(typeof prev);
-              IncreaseItemQty(_id, Quantity + 1);
-              return prev + 1;
+              if (left >= Quantity && left !== 0) {
+                IncreaseItemQty(_id, Quantity + 1);
+                return prev + 1;
+              } else {
+                return prev;
+              }
             })
           }
         >

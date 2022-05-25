@@ -204,7 +204,8 @@ const Cart = ({ show, data }) => {
                 Name={item.ProductId.Name}
                 Image={item.ProductId.Image}
                 Price={item.ProductId.Price}
-                Quantity={item.Quantity}
+                Quantity={item.ProductId.Quantity}
+                left={item.Quantity}
                 IncreaseItemQty={IncreaseQtyHandler}
                 ReduceQtyHandler={ReduceQtyHandler}
                 RemoveFromCartHandler={RemoveFromCartHandler}

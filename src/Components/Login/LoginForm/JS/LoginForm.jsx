@@ -95,7 +95,7 @@ const LoginForm = ({ submit }) => {
         </div>
         <Button type="submit">Login</Button>
         <p className={classes.LoginForm_Redirect}>
-          Not registerd yet?
+          Not registered yet?
           <Link className={classes.LoginForm_Link} to="/signup">
             Create an Account
           </Link>
