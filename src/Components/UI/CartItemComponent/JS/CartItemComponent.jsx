@@ -57,7 +57,7 @@ const CartItemComponent = ({
           className={classes.CartItemComponent_QuantityElement}
           onClick={(e) =>
             setCurrentQuantity((prev) => {
-              console.log(left >= Quantity + left);
+              console.log(left !== 0 && Quantity <= left);
               if (left !== 0 && Quantity <= left) {
                 IncreaseItemQty(_id, Quantity + 1);
                 return prev + 1;
