@@ -13,7 +13,9 @@ const CartItemComponent = ({
   RemoveFromCartHandler,
   left,
 }) => {
-  const [CurrentQuantity, setCurrentQuantity] = useState(+Quantity);
+  const [CurrentQuantity, setCurrentQuantity] = useState(
+    +Quantity > left ? left : +Quantity
+  );
   console.log(typeof +Price);
   return (
     <div className={classes.CartItemComponent}>
