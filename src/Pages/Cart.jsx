@@ -99,7 +99,10 @@ const Cart = ({ show, data }) => {
 
   const DisplayRazorPay = async () => {
     const res = await LoadRazorPay();
-
+    if (!res) {
+      alert("Razorpay SDK failed");
+      return;
+    }
     if (!res) {
       alert("Razorpay SDK failed");
       return;

@@ -15,7 +15,7 @@ const Search = ({ searchItem }) => {
         />
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search By Product Names"
           onChange={(e) => {
             setItemName(e.target.value);
           }}
