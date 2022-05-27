@@ -27,7 +27,7 @@ const OrderContainer = ({ _id, Totalamount, Items, Time }) => {
                   </div>
                 </div>
               </div>
-              <div className={classes.OrderContainer_MetaData}>
+              {/* <div className={classes.OrderContainer_MetaData}>
                 <div className={classes.OrderContainer_Status}>
                   <h3>Status</h3>
                   <p
@@ -40,7 +40,7 @@ const OrderContainer = ({ _id, Totalamount, Items, Time }) => {
                     {item.Status}
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           ))}
       </div>

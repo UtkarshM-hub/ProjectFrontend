@@ -32,7 +32,7 @@ const SalesItemContainer = ({
         <div className={classes.SalesItemContainer_Quantity}>
           <p>Items: {Items.length}</p>
         </div>
-        <div className={classes.SalesItemContainer_Status}>
+        {/* <div className={classes.SalesItemContainer_Status}>
           <p>Status:</p>
           <div className={classes.SalesItemContainer_StatusContainer}>
             <div
@@ -44,7 +44,7 @@ const SalesItemContainer = ({
             ></div>
             <p>{Status}</p>
           </div>
-        </div>
+        </div> */}
       </div>
       <div
         className={`${classes.SalesItemContainer_Invisible} ${
