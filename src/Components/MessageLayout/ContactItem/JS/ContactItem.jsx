@@ -36,12 +36,12 @@ const ContactItem = ({
           <p>Hi there! How are you</p>
         </div>
       </div>
-      <div className={classes.ContactItem_DataContainer}>
+      {/* <div className={classes.ContactItem_DataContainer}>
         <p>6:03</p>
         <div className={classes.ContactItem_NewMSG}>
           <p>1</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
