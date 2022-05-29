@@ -63,7 +63,6 @@ const Store = () => {
               Price={item.Price}
               Image={item.Image}
               Quantity={item.Quantity}
-              Creator={item.Creator.Name}
               addToCart={AddToCartHandler}
             />
           ))}

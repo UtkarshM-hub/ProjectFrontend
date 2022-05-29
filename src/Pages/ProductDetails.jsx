@@ -75,6 +75,7 @@ const ProductDetails = () => {
         Price={ProductInfo.Price}
         Quantity={ProductInfo.Quantity}
         AddToCart={AddToCartHandler}
+        Creator={ProductInfo.Creator.Name}
         BuyNow={BuyNowHandler}
       />
     </Alignment>
