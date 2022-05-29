@@ -27,6 +27,7 @@ const ProductDetails = () => {
             Price: res.data.Price,
             Quantity: res.data.Quantity,
             Image: res.data.Image,
+            Creator: res.data.Creator.Name,
           })
         );
     };
