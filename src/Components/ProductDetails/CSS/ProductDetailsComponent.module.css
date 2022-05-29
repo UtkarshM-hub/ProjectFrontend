@@ -46,6 +46,7 @@
 .ProductDetails_MainInfo h2 {
   color: white;
   font-weight: 550;
+  margin: 0;
 }
 
 .ProductDetails_MainInfo p {
@@ -146,6 +147,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin: 0 0 2em 0;
 }
 
 .ProductDetailsComponent_dot {
@@ -156,5 +158,6 @@
 }
 
 .ProductDetailsComponent_MerchantName {
-  color: white;
+  color: var(--SuccessColorHover);
+  margin: 0 0.5em;
 }
