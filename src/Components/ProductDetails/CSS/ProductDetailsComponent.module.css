@@ -141,3 +141,20 @@
 .ProductDetailsComponent_SoldOut {
   color: var(--CancelColor);
 }
+
+.ProductDetailsComponent_Merchant {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ProductDetailsComponent_dot {
+  width: 0.8em;
+  height: 0.8em;
+  background: var(--SuccessColorHover);
+  border-radius: 50%;
+}
+
+.ProductDetailsComponent_MerchantName {
+  color: white;
+}
