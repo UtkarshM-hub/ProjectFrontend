@@ -9,6 +9,7 @@ const ProductDetailsComponent = ({
   Price,
   Quantity,
   AddToCart,
+  Creator,
   BuyNow,
 }) => {
   const [QuantityNumber, setQuantityNumber] = useState(1);
@@ -24,6 +25,12 @@ const ProductDetailsComponent = ({
             className={`${classes.ProductDetails_MainInfo} ${classes.ProductDetailsComponent_MarginClass}`}
           >
             <h2>{Name}</h2>
+            <div className={classes.ProductDetailsComponent_Merchant}>
+              <div className={classes.ProductDetailsComponent_dot}></div>
+              <div className={classes.ProductDetailsComponent_MerchantName}>
+                {Creator}
+              </div>
+            </div>
             <p>{Description}</p>
             {Quantity <= 10 && Quantity !== 0 && (
               <h3
