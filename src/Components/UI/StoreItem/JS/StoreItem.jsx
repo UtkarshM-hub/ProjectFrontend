@@ -10,6 +10,7 @@ const StoreItem = ({
   Price,
   Image,
   Quantity,
+  Creator,
   addToCart,
 }) => {
   const history = useHistory();
@@ -24,6 +25,10 @@ const StoreItem = ({
           onClick={(e) => history.push(`/ProductDetails/:${_id}`)}
         >
           <p>{Name}</p>
+          <div className={classes.StoreItem_Merchant}>
+            <div className={classes.StoreItem_dot}></div>
+            <div className={classes.StoreItem_MerchantName}>{Creator}</div>
+          </div>
         </div>
         <div className={classes.StoreItem_OtherInfo}>
           <div className={classes.StoreItem_PriceContainer}>
