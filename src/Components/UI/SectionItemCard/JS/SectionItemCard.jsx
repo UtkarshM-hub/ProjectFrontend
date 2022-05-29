@@ -97,7 +97,15 @@ const SectionItemCard = ({
             <p className={classes.SectionItemCard_Price}>
               ₹{Price.toLocaleString("en-US")}
             </p>
-            <p className={classes.SectionItemCard_Qty}>{Quantity} Qty</p>
+            <p
+              className={`${classes.SectionItemCard_Qty} ${
+                +Quantity <= 10 || +Quantity === 0
+                  ? classes.SectionItemCard_FewLeft
+                  : classes.SectionItemCard_Qty
+              }`}
+            >
+              {Quantity} Qty
+            </p>
           </div>
         </div>
       </div>

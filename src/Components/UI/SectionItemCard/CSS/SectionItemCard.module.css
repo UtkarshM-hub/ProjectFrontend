@@ -75,3 +75,7 @@
 .SectionItemCard_Qty {
   color: var(--SecondaryText);
 }
+
+.SectionItemCard_FewLeft {
+  color: var(--CancelColor);
+}
