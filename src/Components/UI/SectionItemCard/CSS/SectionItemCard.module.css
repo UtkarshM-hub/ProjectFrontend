@@ -78,4 +78,5 @@
 
 .SectionItemCard_FewLeft {
   color: var(--CancelColor);
+  font-weight: bold;
 }
