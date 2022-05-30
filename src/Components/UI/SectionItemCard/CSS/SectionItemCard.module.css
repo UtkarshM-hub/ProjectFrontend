@@ -28,6 +28,7 @@
 .SectionItemCard h3,
 .SectionItemCard_MoreIcon {
   color: white;
+  text-align: center;
 }
 
 .SectionItemCard_MoreIcon {
