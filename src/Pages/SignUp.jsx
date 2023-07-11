@@ -25,7 +25,7 @@ const SignUp = ({ show }) => {
   // };
   const SignInHandler = async (data) => {
     await axios
-      .post("https://somethingdotfunny.herokuapp.com/users/signup", data, {
+      .post("https://projectbackend-production-088c.up.railway.app/users/signup", data, {
         headers: { "Content-Type": "application/json" },
       })
       .then(async (res) => {
