@@ -32,7 +32,7 @@ const UpdateProfile = () => {
     ) {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/users/EditUserData",
+          "https://projectbackend-production-088c.up.railway.app/users/EditUserData",
           JSON.stringify({ userId: userId, data }),
           {
             headers: { "Content-Type": "application/json" },
@@ -57,7 +57,7 @@ const UpdateProfile = () => {
   const RemoveProfilePicHandler = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/users/RemoveProfilePic",
+        "https://projectbackend-production-088c.up.railway.app/users/RemoveProfilePic",
         JSON.stringify({ userId: userId }),
         {
           headers: { "Content-Type": "application/json" },
@@ -87,7 +87,7 @@ const UpdateProfile = () => {
             if (res.status === 200) {
               await axios
                 .post(
-                  "https://somethingdotfunny.herokuapp.com/users/UpdateProfilePic",
+                  "https://projectbackend-production-088c.up.railway.app/users/UpdateProfilePic",
                   JSON.stringify({ Picture: res.data.url, userId: userId }),
                   {
                     headers: { "Content-Type": "application/json" },
