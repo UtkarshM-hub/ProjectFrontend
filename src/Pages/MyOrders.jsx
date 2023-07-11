@@ -14,7 +14,7 @@ const MyOrders = () => {
     const GetOrdersHandler = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/users/GetMyOrders",
+          "https://projectbackend-production-088c.up.railway.app/users/GetMyOrders",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },
