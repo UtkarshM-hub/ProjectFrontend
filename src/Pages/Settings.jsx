@@ -12,7 +12,7 @@ const Settings = () => {
     const GetSettings = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/users/getSettingsHandler",
+          "https://projectbackend-production-088c.up.railway.app/users/getSettingsHandler",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },
