@@ -37,7 +37,7 @@ const Home = () => {
   let socket;
   const initialize = async () => {
     if (refresh) {
-      socket = init("https://somethingdotfunny.herokuapp.com");
+      socket = init("https://projectbackend-production-088c.up.railway.app/");
       refresh = false;
     }
     socket.emit("saveConnect", { userId: userId });
@@ -97,7 +97,7 @@ const Home = () => {
   const getMessages = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/GetMsg",
+        "https://projectbackend-production-088c.up.railway.app/Connection/GetMsg",
         JSON.stringify({ userId: userId }),
         { headers: { "Content-Type": "application/json" } }
       )
@@ -110,7 +110,7 @@ const Home = () => {
   const getContactsHandler = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/getContacts",
+        "https://projectbackend-production-088c.up.railway.app/Connection/getContacts",
         { userId: userId },
         {
           Headers: { "Content-Type": "application/json" },
@@ -183,7 +183,7 @@ const Home = () => {
     }
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/SaveMessage",
+        "https://projectbackend-production-088c.up.railway.app/Connection/SaveMessage",
         JSON.stringify({
           id: ActiveContactState.id,
           from: userId,
@@ -238,7 +238,7 @@ const Home = () => {
     const getCartHandler = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Shop/GetCart",
+          "https://projectbackend-production-088c.up.railway.app/Shop/GetCart",
           JSON.stringify({ userId: userId }),
           {
             headers: {
