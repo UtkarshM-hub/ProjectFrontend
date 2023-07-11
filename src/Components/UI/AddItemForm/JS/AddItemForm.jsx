@@ -47,7 +47,7 @@ const AddItemForm = ({ toggel }) => {
           };
           await axios
             .post(
-              "https://somethingdotfunny.herokuapp.com/Inventory/AddItemToSection",
+              "https://projectbackend-production-088c.up.railway.app/Inventory/AddItemToSection",
               JSON.stringify(newData),
               {
                 headers: { "Content-Type": "application/json" },
