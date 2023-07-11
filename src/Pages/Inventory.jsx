@@ -23,7 +23,7 @@ const Inventory = () => {
   const AddInventoryHandler = async (data) => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Inventory/AddSection",
+        "https://projectbackend-production-088c.up.railway.app/Inventory/AddSection",
         JSON.stringify(data),
         {
           headers: { "Content-Type": "application/json" },
@@ -45,7 +45,7 @@ const Inventory = () => {
     const getInventoryHandler = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Inventory/getInventory",
+          "https://projectbackend-production-088c.up.railway.app/Inventory/getInventory",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },
