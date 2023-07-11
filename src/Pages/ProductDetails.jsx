@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const getProductDataHandler = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Shop/GetProductData",
+          "https://projectbackend-production-088c.up.railway.app/Shop/GetProductData",
           JSON.stringify({ ProductId: ProductId.substring(1), _id: userId }),
           {
             headers: { "Content-Type": "application/json" },
