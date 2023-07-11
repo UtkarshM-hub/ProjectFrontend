@@ -48,7 +48,7 @@ const SignUpForm = ({ SignIn, show }) => {
       ) {
         setShow(true);
         await axios
-          .post("https://somethingdotfunny.herokuapp.com/users/CheckCred", {
+          .post("https://projectbackend-production-088c.up.railway.app/users/CheckCred", {
             Email: EmailVal,
             UserName: UserNameVal,
           })
