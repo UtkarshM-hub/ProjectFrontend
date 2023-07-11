@@ -117,7 +117,7 @@ const Cart = ({ show, data }) => {
       )
       .then((res) => {
         const options = {
-          key: "rzp_live_51JoGmZKUoPLEg", // Enter the Key ID generated from the Dashboard
+          key: "rzp_live_sQZmPTEF7jKapO", // Enter the Key ID generated from the Dashboard
           amount: TotalAmount.toString(), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
           currency: res.data.currency,
           name: "Checkout",
