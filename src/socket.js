@@ -8,7 +8,7 @@ module.exports={
     },
     getSocket:()=>{
         if(socket===undefined){
-            socket=io("https://somethingdotfunny.herokuapp.com");
+            socket=io("https://projectbackend-production-088c.up.railway.app/");
             return socket;
         }
         return socket;
