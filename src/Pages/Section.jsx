@@ -31,7 +31,7 @@ const Section = () => {
     const getSectionInfo = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Inventory/getInventory",
+          "https://projectbackend-production-088c.up.railway.app/Inventory/getInventory",
           JSON.stringify({ userId: userId, sectionId: sectionId.substring(1) }),
           { headers: { "Content-Type": "application/json" } }
         )
