@@ -27,7 +27,7 @@ const SectionItemCard = ({
     console.log({ _id: _id, SectionId: sectionId, userId: userId });
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Inventory/DeleteItem",
+        "https://projectbackend-production-088c.up.railway.app/Inventory/DeleteItem",
         JSON.stringify({ _id: _id, SectionId: sectionId, userId: userId }),
         {
           headers: { "Content-Type": "application/json" },
