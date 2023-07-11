@@ -50,7 +50,7 @@ export const ForwardMessage = ({ message, CloseHandler }) => {
       };
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Connection/ForwardMessage",
+          "https://projectbackend-production-088c.up.railway.app/Connection/ForwardMessage",
           JSON.stringify(data),
           {
             headers: { "Content-Type": "application/json" },
