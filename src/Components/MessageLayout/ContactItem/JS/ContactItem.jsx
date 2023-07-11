@@ -33,7 +33,7 @@ const ContactItem = ({
         </div>
         <div className={classes.ContactItem_InfoContainer}>
           <h3>{name}</h3>
-          <p>Hi there! How are you</p>
+{/*           <p>Hi there! How are you</p> */}
         </div>
       </div>
       {/* <div className={classes.ContactItem_DataContainer}>
