@@ -12,7 +12,7 @@ const Analytics = () => {
     const getAnalyticsDataHandler = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Analytics/GetAnalytics",
+          "https://projectbackend-production-088c.up.railway.app/Analytics/GetAnalytics",
           JSON.stringify({ userId: userId }),
           {
             headers: { "Content-Type": "application/json" },
