@@ -47,7 +47,7 @@ const EditSectionForm = ({ sectionId, id, onClick }) => {
           };
           await axios
             .post(
-              "https://somethingdotfunny.herokuapp.com/Inventory/EditSectionData",
+              "https://projectbackend-production-088c.up.railway.app/Inventory/EditSectionData",
               JSON.stringify(newData),
               {
                 headers: { "Content-Type": "application/json" },
@@ -66,7 +66,7 @@ const EditSectionForm = ({ sectionId, id, onClick }) => {
     const getSectionData = async () => {
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/Inventory/GetSectionData",
+          "https://projectbackend-production-088c.up.railway.app/Inventory/GetSectionData",
           JSON.stringify({ userId: userId, sectionId: sectionId }),
           { headers: { "Content-Type": "application/json" } }
         )
