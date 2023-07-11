@@ -24,7 +24,7 @@ const Address = () => {
   const GetSettings = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/users/getSettingsHandler",
+        "https://projectbackend-production-088c.up.railway.app/users/getSettingsHandler",
         JSON.stringify({ userId: userId }),
         {
           headers: { "Content-Type": "application/json" },
@@ -56,7 +56,7 @@ const Address = () => {
       };
       await axios
         .post(
-          "https://somethingdotfunny.herokuapp.com/users/AddAddress",
+          "https://projectbackend-production-088c.up.railway.app/users/AddAddress",
           JSON.stringify({ userId: userId, data: data }),
           {
             headers: { "Content-Type": "application/json" },
