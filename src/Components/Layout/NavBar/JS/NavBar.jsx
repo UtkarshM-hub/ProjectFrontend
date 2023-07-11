@@ -33,7 +33,7 @@ const NavBar = () => {
   const FindUserHandler = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/users/findUsers",
+        "https://projectbackend-production-088c.up.railway.app/users/findUsers",
         { Name: searchText, userId: userId },
         {
           headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ const NavBar = () => {
     dispatch(ChatActions.AddRequested({ id: data.friendId }));
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/friendRequest",
+        "https://projectbackend-production-088c.up.railway.app/Connection/friendRequest",
         JSON.stringify(data),
         {
           headers: { "Content-Type": "application/json" },
@@ -74,7 +74,7 @@ const NavBar = () => {
 
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/DenyRequest",
+        "https://projectbackend-production-088c.up.railway.app/Connection/DenyRequest",
         JSON.stringify(data),
         {
           headers: { "Content-Type": "application/json" },
@@ -87,7 +87,7 @@ const NavBar = () => {
   const getNotificationHandler = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/getNotifications",
+        "https://projectbackend-production-088c.up.railway.app/Connection/getNotifications",
         { userId: userId },
         {
           headers: { "Content-Type": "application/json" },
@@ -119,7 +119,7 @@ const NavBar = () => {
     dispatch(ChatActions.RemoveRequested({ id: data.friendId }));
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/DeleteRequest",
+        "https://projectbackend-production-088c.up.railway.app/Connection/DeleteRequest",
         JSON.stringify(data),
         {
           headers: { "Content-Type": "application/json" },
@@ -132,7 +132,7 @@ const NavBar = () => {
   const FetchUserData = async () => {
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/users/GetUserData",
+        "https://projectbackend-production-088c.up.railway.app/users/GetUserData",
         JSON.stringify({ userId: userId }),
         {
           headers: { "Content-Type": "application/json" },
@@ -171,7 +171,7 @@ const NavBar = () => {
 
     await axios
       .post(
-        "https://somethingdotfunny.herokuapp.com/Connection/AcceptRequest",
+        "https://projectbackend-production-088c.up.railway.app/Connection/AcceptRequest",
         JSON.stringify(data),
         {
           headers: { "Content-Type": "application/json" },
